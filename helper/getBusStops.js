@@ -1,4 +1,4 @@
-import { get_access_token } from "./get_access_token";
+import { get_access_token } from "./get_access_token.js";
 
 export async function getBusStops(bus, city) {
   const access_token_res = await get_access_token();
