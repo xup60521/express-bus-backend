@@ -1,10 +1,12 @@
-const express = require("express");
+import express from "express";
+import { config } from "dotenv";
+import bus_router from "./router/bus.js";
+config()
 const app = express();
 
-app.get("/", (req, res) => res.send("Express on Vercel"));
 
+app.get("/", (req, res) => res.send("Express on Vercel (using ESM)"));
 
-const bus_router = require("./router/bus")
 app.use("/bus", bus_router)
 
-module.exports = app;
+export default app
